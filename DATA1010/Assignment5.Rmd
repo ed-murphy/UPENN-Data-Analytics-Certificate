@@ -12,15 +12,18 @@ output:
 
 # SETUP
 
+# loading packages
+library(tidyverse)
+library(readxl)
+library(here)
+
 # setting the correct working directory
-knitr::opts_knit$set(root.dir = "C:/Users/edwar/Dropbox/DATA101/Data/Raw")
+knitr::opts_knit$set(root.dir = here())
 
 # setting tibble width option
 options(tibble.width = Inf)
 
-# loading packages
-library(tidyverse)
-library(readxl)
+
 
 ```
  <br>
@@ -38,7 +41,7 @@ Upon reading the data into R and taking a look at its structure, we can see that
 # QUESTION #1 
 
 # reading the file
-data <- read_excel("us_avg_tuition.xlsx")
+data <- read_excel(here("data", "us_avg_tuition.xlsx"))
 
 # viewing the data
 data

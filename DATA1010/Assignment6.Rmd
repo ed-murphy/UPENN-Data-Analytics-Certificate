@@ -9,22 +9,19 @@ output:
 
 
 ```{r setup, include=FALSE}
-
-# SETUP
-
-# setting the correct working directory
-knitr::opts_knit$set(root.dir = "C:/Users/edwar/Dropbox/DATA101/Data/Raw")
-
-# setting tibble width option
-options(tibble.width = Inf)
-
 # loading packages
 library(tidyverse)
 library(readr)
 library(maps)
 library(mapdata)
 library(usmap)
+library(here)
 
+# setting the correct working directory
+knitr::opts_knit$set(root.dir = here())
+
+# setting tibble width option
+options(tibble.width = Inf)
 ```
 
 ## Question #1
@@ -36,7 +33,7 @@ library(usmap)
 ## Question #1
 
 # load county_returns
-voting <- read_csv("county_returns.csv")
+voting <- read_csv(here("data", "county_returns.csv"))
 
 # check out county_returns data frame
 # I don't need this to be in the output - just showing what I did

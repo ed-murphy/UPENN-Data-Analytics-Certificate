@@ -9,15 +9,6 @@ output:
 
 
 ```{r setup, include=FALSE}
-
-# SETUP
-
-# setting the correct working directory
-knitr::opts_knit$set(root.dir = "C:/Users/edwar/Dropbox/DATA101/Data/Raw")
-
-# setting tibble width option
-options(tibble.width = Inf)
-
 # loading packages
 library(tidyverse)
 library(readr)
@@ -26,8 +17,13 @@ library(mapdata)
 library(usmap)
 library(lubridate)
 library(ggplot2)
+library(here)
 
+# setting the correct working directory
+knitr::opts_knit$set(root.dir = here())
 
+# setting tibble width option
+options(tibble.width = Inf)
 ```
 
 ## Question #1
@@ -39,7 +35,7 @@ library(ggplot2)
 ## Question #1
 
 # load Trump approval
-trump_approval <- read_csv("https://projects.fivethirtyeight.com/trump-approval-data/approval_topline.csv")
+trump_approval <- read_csv(here("data", "https://projects.fivethirtyeight.com/trump-approval-data/approval_topline.csv"))
 
 # filter data to "All Polls"
 trump_approval_all <- trump_approval %>%
